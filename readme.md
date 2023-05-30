@@ -31,9 +31,9 @@
         <li><a href="#Importancia del blockchain">Importancia del blockchain</a></li>
         <li><a href="#Estructura del blockchain">Estructura del blockchain</a></li>
         <li><a href="#Estrategia usada para asegurar la integridad del contenido">Estrategia usada para asegurar la integridad del contenido</a></li>
-        <li><a href="Estructuras de datos">Algoritmos y contenedores utilizados</a></li>
-        <li><a href="Análisis de complejidad algorítmica">Algoritmos y contenedores utilizados</a></li>
-        <li><a href="Conclusiones">Algoritmos y contenedores utilizados</a></li>
+        <li><a href="Estructuras de datos">Estructuras de datos</a></li>
+        <li><a href="Análisis de complejidad algorítmica">Análisis de complejidad algorítmica</a></li>
+        <li><a href="Conclusiones">Conclusiones</a></li>
       </ul>
     </a></li>
 
