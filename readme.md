@@ -44,3 +44,20 @@
 </details>
 
 ---
+
+## Acerca del proyecto
+
+### Introducción
+
+sdamdñalmdñasmdñasmdña
+aasdsasdadadadadasdsad
+
+### Caso de estudio
+
+
+### Importancia del blockchain
+
+
+
+
+
