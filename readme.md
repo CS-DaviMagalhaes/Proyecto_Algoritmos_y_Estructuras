@@ -15,8 +15,7 @@
   <h1>🔷 Aplicación de retiro de dinero con blockchain 🔶</h1>
   
   <p>
-  Hola! 👨‍💻. Somos estudiantes del curso de Programación III de la Universidad de Ingeniería y Tecnología de Lima, Perú.  
-  Hemos aplicado conocimientos aprendidos durante el curso de Programación para desarrollar el juego Hex en C++.
+  Aplicación para simular retiro de dinero usando el sistema de blockchain elaborado con c++. 
   </p>
 </div>
 
