@@ -1,4 +1,4 @@
-![portada_hexG](https://user-images.githubusercontent.com/91573449/196766044-b95a4451-7a28-4bc0-a9d3-2f65911f2c4f.png)
+![portada_hexG](.png)
 
 <!-- Mejor compatibilidad -->
 
@@ -19,3 +19,29 @@
   Hemos aplicado conocimientos aprendidos durante el curso de Programación para desarrollar el juego Hex en C++.
   </p>
 </div>
+
+
+<details open>
+  <summary>Tabla de contenidos:</summary>
+  <ol>
+    <li><a href="#acerca-del-proyecto">
+      Acerca del proyecto
+      <ul>
+        <li><a href="#Introducción">Introducción</a></li>
+        <li><a href="#Caso de estudio">Caso de estudio</a></li>
+        <li><a href="#Importancia del blockchain">Importancia del blockchain</a></li>
+        <li><a href="#Estructura del blockchain">Estructura del blockchain</a></li>
+        <li><a href="#Estrategia usada para asegurar la integridad del contenido">Estrategia usada para asegurar la integridad del contenido</a></li>
+        <li><a href="Estructuras de datos">Algoritmos y contenedores utilizados</a></li>
+        <li><a href="Análisis de complejidad algorítmica">Algoritmos y contenedores utilizados</a></li>
+        <li><a href="Conclusiones">Algoritmos y contenedores utilizados</a></li>
+      </ul>
+    </a></li>
+
+    <li><a href="#referencias-y-links">
+      Referencias y links
+    </a></li>
+  </ol>
+</details>
+
+---
