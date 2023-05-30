@@ -15,8 +15,7 @@
   <h1>🔷 Aplicación de retiro de dinero con blockchain 🔶</h1>
   
   <p>
-  Hola! 👨‍💻. Somos estudiantes del curso de Programación III de la Universidad de Ingeniería y Tecnología de Lima, Perú.  
-  Hemos aplicado conocimientos aprendidos durante el curso de Programación para desarrollar el juego Hex en C++.
+  Aplicación para simular retiro de dinero usando el sistema de blockchain elaborado con c++. 
   </p>
 </div>
 
@@ -32,15 +31,37 @@
         <li><a href="#Importancia del blockchain">Importancia del blockchain</a></li>
         <li><a href="#Estructura del blockchain">Estructura del blockchain</a></li>
         <li><a href="#Estrategia usada para asegurar la integridad del contenido">Estrategia usada para asegurar la integridad del contenido</a></li>
-        <li><a href="Estructuras de datos">Algoritmos y contenedores utilizados</a></li>
-        <li><a href="Análisis de complejidad algorítmica">Algoritmos y contenedores utilizados</a></li>
-        <li><a href="Conclusiones">Algoritmos y contenedores utilizados</a></li>
+        <li><a href="Estructuras de datos">Estructuras de datos</a></li>
+        <li><a href="Análisis de complejidad algorítmica">Análisis de complejidad algorítmica</a></li>
+        <li><a href="Conclusiones">Conclusiones</a></li>
       </ul>
     </a></li>
+<<<<<<< HEAD
     <li><a href="#referencias-y-links">
       Referencias y links
     </a></li>
+=======
+
+   
+>>>>>>> 647ea613122e2cc710b4b1a0b0e55c9ca77bf42c
   </ol>
 </details>
 
 ---
+
+## Acerca del proyecto
+
+### Introducción
+
+sdamdñalmdñasmdñasmdña
+aasdsasdadadadadasdsad
+
+### Caso de estudio
+
+
+### Importancia del blockchain
+
+
+
+
+
