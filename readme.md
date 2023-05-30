@@ -37,7 +37,6 @@
         <li><a href="Conclusiones">Algoritmos y contenedores utilizados</a></li>
       </ul>
     </a></li>
-
     <li><a href="#referencias-y-links">
       Referencias y links
     </a></li>
