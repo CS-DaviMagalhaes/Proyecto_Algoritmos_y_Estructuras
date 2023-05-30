@@ -37,9 +37,7 @@
       </ul>
     </a></li>
 
-    <li><a href="#referencias-y-links">
-      Referencias y links
-    </a></li>
+   
   </ol>
 </details>
 
