@@ -135,24 +135,37 @@ En el caso en el que no existe un bloque en la cadena. Entonces, se crea un solo
 Se utilizo hashing, implementandolo en cada blockchain con un hash prev y next para mantener una comunicación entre un blockchain anterior y siguiente, conteniendo en cada bloque la información requerida, de tal forma que no se pueda cambiar ningún dato, pero para probar la efectividad al cambiar los datos el hash formado por cada block cambia en consecuencia (proof of work)
 
 ### Estructuras de datos usadas
-
+Estas son las estructuras de datos que fueron utilizadas para la implementación de esta aplicación.
+- Vector
+- Heap
+- List
 
 ### Análisis de complejidad algorítmica
 >- **block.h**:
 
+La complejidad de este código es principalmente lineal, O(n), donde "n" es el tamaño de los datos procesados. Hay varias operaciones que se realizan una vez o un número constante de veces, por lo que no afectan significativamente la complejidad general.
+
+Aquí hay algunas operaciones clave y su complejidad asociada:
 
 
 **Creación de un objeto Block:**
 
+O(1) - Las asignaciones y la inicialización de variables son operaciones de tiempo constante.
 
 **Función "mine()":** 
 
+La complejidad depende del bucle "while (true)" y de la generación de hash. En el peor caso, el bucle puede iterar hasta que se encuentre un hash válido, lo que podría llevar un tiempo considerable. Por lo tanto, en el peor caso, la complejidad sería O(m * n), donde "m" es el número de iteraciones del bucle y "n" es el tamaño de los datos.
 
 
 **Función "reHash()":**
 
+O(n) - La generación del hash y las comparaciones tienen un tiempo de ejecución lineal dependiendo del tamaño de los datos.
 
 **Otras funciones:**
+
+La mayoría de las otras funciones tienen complejidad O(1) ya que realizan operaciones de tiempo constante, como asignaciones y comparaciones.
+
+En general, el código parece tener una complejidad razonable y no hay operaciones que indiquen un rendimiento deficiente.
 
 
 >- **blockchain.h**:
