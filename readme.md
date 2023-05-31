@@ -242,6 +242,7 @@ En conclusión, el proyecto demuestra la implementación de un sistema de blockc
 
 ### Anexos
 Link de project tables de github:
+
 https://github.com/users/CS-DaviMagalhaes/projects/2/views/1
 
 ---
