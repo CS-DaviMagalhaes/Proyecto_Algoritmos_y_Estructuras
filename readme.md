@@ -201,6 +201,7 @@ La función de hash SHA-256 en C++. La complejidad del código depende de varios
 
 
 **Conversión del texto de entrada a binario:**
+
 La función text_to_binary recorre cada carácter del texto de entrada y genera su representación binaria de 8 bits. Por lo tanto, la complejidad de esta función es lineal con respecto al tamaño del texto de entrada, O(n), donde n es la longitud del texto.
 Generación de los bloques de datos:
 
@@ -213,6 +214,7 @@ Mutación final de los valores hash 'h':
 Después de la compresión de datos, se realizan modificaciones finales en los valores hash 'h'. Esta sección es constante y no depende del tamaño del mensaje de entrada.
 
 **Conversión de los valores hash 'h' a hexadecimal:**
+
 La sección final convierte los valores hash 'h' de cada bloque en su representación hexadecimal. Esto implica convertir cada valor de 32 bits a su representación hexadecimal de 8 caracteres. Dado que hay 8 valores hash 'h', la complejidad de esta sección es constante.
 En resumen, la complejidad general del código puede aproximarse a O(n), donde n es la longitud del texto de entrada. Sin embargo, se debe tener en cuenta que el análisis proporcionado es una estimación simplificada y no tiene en cuenta todos los detalles y operaciones dentro de las funciones auxiliares utilizadas en el código.
 
