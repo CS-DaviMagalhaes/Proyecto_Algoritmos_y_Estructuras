@@ -100,23 +100,39 @@ El constructor es uno por defecto, ya que una cadena de bloques siempre empieza 
 
 **Explicación de los métodos**
 
-`addBlock` : 
+`addBlock` : Se recibe como argumento un objeto de tipo retiro que representa el retiro de dinero del cliente.
+El algoritmo empieza preguntando si ya existe un bloque en la cadena, si es que existe entonces se crea dos bloques, uno que será el bloque a añadir y el otro el último bloque de la cadena. Despues, se genera el id, el código hash del nuevo bloque y se manda el hash del último bloque. Por último, se añade el bloque a la cadena y se aumenta en una unidad la variable size_chain
 
-`show_blockchain` : 
+En el caso en el que no existe un bloque en la cadena. Entonces, se crea un solo bloque que será el nuevo, se genera el id y un código hash para el nuevo bloque y se manda un string vacio en el dato del hash previo, porque no existe un bloque anterior a este. Para terminar se añade el bloque a la cadena y se aumenta en una unidad la variable size_chain
 
-`import_blockchain` : 
+`show_blockchain` : Se crea un iterador para la lista de bloques. Con el iterador creado se recorre la lista, se crea un nuevo bloque que se llama current porque en cada iteración se actualizará con el bloque actual. Al final, se llama a una función del bloque para imprimir todos sus datos.
 
-`test_proof_work` : 
+`import_blockchain` : Recibe como argumento un string que es la ruta del archivo csv a importar. Despues, se comienza a recorrer cada línea del archivo. En cada línea se recorre palabra por palabra se reconoce por la separación de comas, una vez separadas las palabras se agregan a un vector. Por último, si el tamaño del vector es 4, entonces quiere decir que el registro esta completo, se pasa a agregar cada elemento a un objeto retiro; una vez creado el objeto se manda como argumento a la funcion de añadir bloque.
 
-`fix_all` : 
+`test_proof_work` : Esta función se utiliza para realizar pruebas y modificar un bloque específico en la cadena de bloques. Toma como argumento un identificador de bloque (id) y realiza las siguientes acciones:
 
-`max_value` : 
+- Itera a través de la cadena de bloques hasta llegar al bloque con el identificador especificado.
+- Solicita al usuario que ingrese un nuevo nombre para el lugar de retiro en ese bloque.
+- Pregunta al usuario si desea arreglar el blockchain.
+- Si el usuario elige no arreglarlo (valor 0), establece una bandera (flag1) para indicar que se debe ajustar el hash previo en el próximo bloque.
+- Si el usuario elige arreglarlo (valor 1), realiza el proceso de minería en ese bloque para obtener un hash válido y establece una bandera (flag2) para indicar que el hash previo debe ajustarse en el próximo bloque.
 
-`min_value` : 
+`fix_all` : Esta función se utiliza para corregir todos los bloques no validados en la cadena de bloques. Itera a través de la cadena de bloques y realiza las siguientes acciones:
+
+- Verifica si el bloque actual tiene validación (get_validation()) establecida como falsa.
+- Si es así, ajusta el hash previo en el bloque actual y realiza el proceso de minería para obtener un hash válido.
+
+`max_value` : Esta función recibe un string que ayuda a saber si se pregunta por la fecha más actual o el monto mayor. Luego, se llama al atributo de la estructura heap ya sea de fecha o de monto para obtener su valor top, en este caso nos retornaría el objeto retiro que cumple con tener el elemento mayor. Una vez obtenido este objeto, se pasa a imprimir los datos del retiro del cliente.
+
+
+`min_value` : Esta función es utilizada para poder obtener el  bloque con el valor mínimo ya sea de monto o fecha. Esta función te pide ingresar un string para poder saber si el valor mínimo a buscar será de monto o fecha; dependiendo cada caso se llama al heap correspondiente. Si es para monto se llama al top del heap "heap_montoMin", si es para fecha se llama al top del heap "heap_fechaMin". Despúes de llamar al top, se imprimen todos sus datos.
+
+
 
 
 ### Estrategia usada para asegurar la integridad del contenido
 
+Se utilizo hashing, implementandolo en cada blockchain con un hash prev y next para mantener una comunicación entre un blockchain anterior y siguiente, conteniendo en cada bloque la información requerida, de tal forma que no se pueda cambiar ningún dato, pero para probar la efectividad al cambiar los datos el hash formado por cada block cambia en consecuencia (proof of work)
 
 ### Estructuras de datos usadas
 
