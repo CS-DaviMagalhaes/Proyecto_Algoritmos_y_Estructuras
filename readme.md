@@ -81,6 +81,7 @@ class Blockchain {
 ```
 
 **Explicación de los atributos**
+
 `chain` : Se implementó una lista que almacena punteros a bloques. Cada bloque guarda la información de un retiro de dinero. El retiro de dinero tiene un cliente, un lugar, un monto y una fecha. Por otro lado, el bloque presenta un id, un nonce, un retiro de dinero (objeto que presenta las caracteristicas previamente descritas), un hash para mantener cifrada la identidad del usuario, el hash previo a este y un booleano que indica si el bloque es válido o no.
 
 `heap_fechaMax` : Se crea una estructura max-heap donde se almacenará las fechas de los retiros hechos. Esto servirá para obtener la fecha más actual en la que se hizo un retiro de dinero.
@@ -94,6 +95,7 @@ class Blockchain {
 `size_chain`: Cantidad de bloques o de transacciones, en términos del proyecto, cantidad de retiros de dinero de los clientes.
 
 **Explicación del constructor**
+
 El constructor es uno por defecto, ya que una cadena de bloques siempre empieza vacía. Entonces, simplemente cuando se quiere crear un objeto blockchain se llama a la clase sin necesidad de pasarle ningun argumento. Si se desea añadir información a este, entonces allí se empiezan a llamar a los métodos de la clase, como por ejemplo el método inicial sería el de añadir bloques (`addBlock(retiro *data)`).
 
 **Explicación de los métodos**
