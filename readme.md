@@ -197,13 +197,15 @@ O(n) - La función recorre toda la cadena y verifica si cada bloque es válido. 
 En general, la complejidad del código de la clase Blockchain es lineal y eficiente en términos de rendimiento.
 
 >- **SHA256.h** 
+
 La función de hash SHA-256 en C++. La complejidad del código depende de varios factores, como la longitud del mensaje de entrada y el tamaño de los bloques de datos utilizados en el algoritmo. A continuación, se presenta un análisis general de la complejidad de las secciones principales del código:
 
 
 **Conversión del texto de entrada a binario:**
 
 La función text_to_binary recorre cada carácter del texto de entrada y genera su representación binaria de 8 bits. Por lo tanto, la complejidad de esta función es lineal con respecto al tamaño del texto de entrada, O(n), donde n es la longitud del texto.
-Generación de los bloques de datos:
+
+**Generación de los bloques de datos:**
 
 El código divide el mensaje binario en bloques de 512 bits (chuncks) y los almacena en el vector bloqueBits. La complejidad de esta sección depende del tamaño del mensaje binario. Si el mensaje binario tiene una longitud de m bits, la complejidad sería O(m/512).
 Compresión de datos:
