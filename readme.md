@@ -239,6 +239,11 @@ En conclusión, el proyecto demuestra la implementación de un sistema de blockc
   https://www.amd.com/es/technologies/blockchain-explained
 - SHA256 - A C++ SHA256 Implementation
   https://github.com/System-Glitch/SHA256
+
+### Anexos
+Link de project tables de github:
+https://github.com/users/CS-DaviMagalhaes/projects/2/views/1
+
 ---
 
 [Back To The Top](#readme-top)
