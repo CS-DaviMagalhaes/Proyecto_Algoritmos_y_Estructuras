@@ -168,15 +168,19 @@ La mayoría de las otras funciones tienen complejidad O(1) ya que realizan opera
 En general, el código parece tener una complejidad razonable y no hay operaciones que indiquen un rendimiento deficiente.
 
 
->- **blockchain.h**:
+>- **BlockChain.h**:
 
+La complejidad de este código de la clase Blockchain es principalmente lineal, O(n), donde "n" es el número de bloques en la cadena.
 
+Aquí hay algunas operaciones clave y su complejidad asociada:
 
 **Función "addBlock(retiro data)":**
 
+O(n) - La función crea un nuevo bloque y lo agrega al final de la cadena. El tiempo de ejecución depende del tamaño de la cadena existente, ya que se necesita recorrer la cadena para encontrar el último bloque.
 
 **Función "show_blockchain()":**
 
+O(n) - La función muestra la información de cada bloque en la cadena. Como se recorre la cadena completa, la complejidad es lineal en relación al número de bloques.
 
 **Función "import_blockchain(const string& archivo)":**
 
@@ -184,12 +188,13 @@ O(m * n) - La función importa una cadena de bloques a partir de un archivo CSV.
 
 **Función "test_proof_work(int id)":**
 
-
-
+O(n) - La función permite realizar pruebas y modificaciones en un bloque específico de la cadena. Recorre la cadena hasta encontrar el bloque deseado y realiza operaciones que tienen una complejidad constante.
 
 **Función "fix_all()":**
 
+O(n) - La función recorre toda la cadena y verifica si cada bloque es válido. Si un bloque no es válido, se realiza una corrección y se vuelve a calcular el hash. Por lo tanto, la complejidad es lineal en relación al número de bloques.
 
+En general, la complejidad del código de la clase Blockchain es lineal y eficiente en términos de rendimiento.
 
 >- **SHA256.h** 
 
