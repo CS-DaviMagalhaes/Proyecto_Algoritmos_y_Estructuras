@@ -197,24 +197,44 @@ O(n) - La función recorre toda la cadena y verifica si cada bloque es válido. 
 En general, la complejidad del código de la clase Blockchain es lineal y eficiente en términos de rendimiento.
 
 >- **SHA256.h** 
-
+La función de hash SHA-256 en C++. La complejidad del código depende de varios factores, como la longitud del mensaje de entrada y el tamaño de los bloques de datos utilizados en el algoritmo. A continuación, se presenta un análisis general de la complejidad de las secciones principales del código:
 
 
 **Conversión del texto de entrada a binario:**
+La función text_to_binary recorre cada carácter del texto de entrada y genera su representación binaria de 8 bits. Por lo tanto, la complejidad de esta función es lineal con respecto al tamaño del texto de entrada, O(n), donde n es la longitud del texto.
+Generación de los bloques de datos:
 
+El código divide el mensaje binario en bloques de 512 bits (chuncks) y los almacena en el vector bloqueBits. La complejidad de esta sección depende del tamaño del mensaje binario. Si el mensaje binario tiene una longitud de m bits, la complejidad sería O(m/512).
+Compresión de datos:
 
+La sección de compresión de datos ejecuta un bucle for en función del número de bloques de datos generados en el paso anterior. En cada iteración, se realizan operaciones matemáticas en los bloques de datos y los valores hash 'h'. El bucle ejecuta un total de 64 iteraciones, independientemente del tamaño del mensaje de entrada. Por lo tanto, la complejidad de esta sección es O(64 * k), donde k es el número de bloques de datos generados.
+Mutación final de los valores hash 'h':
 
+Después de la compresión de datos, se realizan modificaciones finales en los valores hash 'h'. Esta sección es constante y no depende del tamaño del mensaje de entrada.
 
 **Conversión de los valores hash 'h' a hexadecimal:**
-
+La sección final convierte los valores hash 'h' de cada bloque en su representación hexadecimal. Esto implica convertir cada valor de 32 bits a su representación hexadecimal de 8 caracteres. Dado que hay 8 valores hash 'h', la complejidad de esta sección es constante.
+En resumen, la complejidad general del código puede aproximarse a O(n), donde n es la longitud del texto de entrada. Sin embargo, se debe tener en cuenta que el análisis proporcionado es una estimación simplificada y no tiene en cuenta todos los detalles y operaciones dentro de las funciones auxiliares utilizadas en el código.
 
 ### Conclusiones
-
+En conclusión, el proyecto demuestra la implementación de un sistema de blockchain funcional y seguro que utiliza diversas estructuras de datos, como vectores, heaps y listas enlazadas, cada una con sus operaciones respectivas. En términos de complejidad algorítmica, el proyecto presenta complejidades eficientes en casi todas las operaciones. Elegimos el caso de estudio específicamente para *retiro* donde cada bloque contiene información sobre un retiro de dinero, como el cliente, el lugar, el monto y la fecha. Para garantizar la integridad de los datos, se utiliza el concepto de hashing, donde cada bloque tiene un hash que se genera a partir de su contenido y del hash del bloque anterior.
 
 ### Autores
+- Davi Eler Magalhães
+- Allyson Tiphany Sánchez Báez
+- Maria Fernanda Surco Vergara
+- Flavia Ailen Mañuico Quequejana
+- Yamileth Yarel Rincón Tejeda
 
 ### Referencias bibliográficas
-
+- What is blockchain technology? - AWS
+  https://aws.amazon.com/what-is/blockchain/?nc1=h_ls&aws-products-all.sort-by=item.additionalFields.productNameLowercase&aws-products-all.sort-order=asc
+- ¿Qué es la tecnología Blockchain? - IBM
+  https://www.ibm.com/es-es/topics/blockchain
+- Descripción de la Cadena de Bloques - AMD
+  https://www.amd.com/es/technologies/blockchain-explained
+- SHA256 - A C++ SHA256 Implementation
+  https://github.com/System-Glitch/SHA256
 ---
 
 [Back To The Top](#readme-top)
