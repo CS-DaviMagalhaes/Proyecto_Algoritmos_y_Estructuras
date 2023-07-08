@@ -1,0 +1,3 @@
+C:/Users/allxs/OneDrive/Imágenes/UTEC/Algoritmos y estructura de datos/Proyecto/Proyecto_Algoritmos_y_Estructuras/cmake-build-debug/CMakeFiles/Proyecto_Algoritmos_y_Estructuras.dir
+C:/Users/allxs/OneDrive/Imágenes/UTEC/Algoritmos y estructura de datos/Proyecto/Proyecto_Algoritmos_y_Estructuras/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/allxs/OneDrive/Imágenes/UTEC/Algoritmos y estructura de datos/Proyecto/Proyecto_Algoritmos_y_Estructuras/cmake-build-debug/CMakeFiles/rebuild_cache.dir

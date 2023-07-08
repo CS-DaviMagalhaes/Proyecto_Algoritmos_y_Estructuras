@@ -42,6 +42,9 @@ class Blockchain {
     void min_value(string tipe);
     void calcular_monto_acumulado(string nombre_cliente);
 
+    // nuevo
+    void search(string opc);
+
 };
 
 void Blockchain::addBlock(retiro *data) {
@@ -138,6 +141,54 @@ void Blockchain::calcular_monto_acumulado(string nombre_cliente){
             total += currentBlock->get_monto();
     }
     cout << "monto total: " << total << " coins" << endl; 
+}
+
+void Blockchain::search(string opc){
+    if(opc=="1"){
+        string nombre_cliente;
+        cout<<"Ingrese el nombre del usuario"<<endl;
+        cin>>nombre_cliente;
+
+        ListIterator<Block *> it;
+        cout<<"\n";
+        cout<<"----------------------------------------\n";
+        cout << "\tRetiros de cliente " << nombre_cliente ;
+        for (it = this->chain->begin(); it != this->chain->end(); ++it) {
+            Block *currentBlock = *it;
+            if (currentBlock->get_cliente() == nombre_cliente)
+                currentBlock->show_block_info(cout);
+        }
+    }
+    else if(opc=="2"){
+            string lugar;
+            cout<<"Ingrese un lugar"<<endl;
+            cin>>lugar;
+
+            ListIterator<Block *> it;
+            cout<<"\n";
+            cout<<"----------------------------------------\n";
+            cout << "\tRetiros en " << lugar ;
+            for (it = this->chain->begin(); it != this->chain->end(); ++it) {
+                Block *currentBlock = *it;
+                if (currentBlock->get_lugar() == lugar)
+                    currentBlock->show_block_info(cout);
+            }
+    }
+    else if(opc=="3"){
+        double monto;
+        cout<<"Ingrese un monto"<<endl;
+        cin>>monto;
+
+        ListIterator<Block *> it;
+        cout<<"\n";
+        cout<<"----------------------------------------\n";
+        cout << "\tRetiros con un monto de s/" << monto  ;
+        for (it = this->chain->begin(); it != this->chain->end(); ++it) {
+            Block *currentBlock = *it;
+            if (currentBlock->get_monto() == monto)
+                currentBlock->show_block_info(cout);
+        }
+    }
 }
 
 

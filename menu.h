@@ -12,7 +12,7 @@
 
 void Menu(Blockchain *coins) {
     int block;
-    char rpta;
+    string rpta; // cambio
     string cliente, lugar;
     double monto;
 
@@ -29,16 +29,19 @@ void Menu(Blockchain *coins) {
         cout << "6. Mayor Valor" << endl;
         cout << "7. Menor Valor" << endl;
         cout << "8. Calcular monto usuario" << endl;
-        cout << "9. Salir" << endl;
+        cout<<"9. Busquedas"<<endl;
+        cout << "10. Salir" << endl;
+
 
         cout << endl
              << "Ingrese una opcion: ";
         cin >> rpta;
         cout << endl;
 
-    } while (rpta != '1' && rpta != '2' && rpta != '3' && rpta != '4' && rpta != '5' && rpta != '6'&& rpta != '7'&& rpta != '8'&& rpta !='9');
+    } while (rpta != "1" && rpta != "2" && rpta != "3" && rpta != "4" && rpta != "5" && rpta != "6" && rpta != "7" && rpta != "8" && rpta != "9" && rpta != "10");
 
-    if (rpta == '1') {  // Creamos y a;adimos el bloque a la blockchain
+
+    if (rpta == "1") {  // Creamos y a;adimos el bloque a la blockchain
 
         cout << "---------------------------" << endl;
         cout << endl
@@ -63,11 +66,11 @@ void Menu(Blockchain *coins) {
         cout << endl
              << "Bloque creado satisfactoriamente." << endl;
         Menu(coins);
-    } else if (rpta == '2') {
+    } else if (rpta == "2") {
         coins->show_blockchain();
         Menu(coins);
 
-    } else if (rpta == '3') {
+    } else if (rpta == "3") {
         cout << "---------------------------" << endl;
         cout << endl
              << "Ingrese Bloque: ";
@@ -75,7 +78,7 @@ void Menu(Blockchain *coins) {
         coins->test_proof_work(block);
         Menu(coins);
 
-    } else if (rpta == '4') {
+    } else if (rpta == "4") {
         cout << "---------------------------" << endl;
         cout << "Arreglando Blockchain..." << endl;
         cout << "---------------------------" << endl;
@@ -87,7 +90,7 @@ void Menu(Blockchain *coins) {
 
     }
 
-    else if (rpta == '5') {
+    else if (rpta == "5") {
         string file;
         cout << "Ingrese nombre del archivo (path): " << endl;
         cin >> file;
@@ -96,7 +99,7 @@ void Menu(Blockchain *coins) {
         Menu(coins);
     }
 
-    else if (rpta == '6') {
+    else if (rpta == "6") {
         string tipe;
         cout <<"Mayor valor de monto o fecha: ";
         cin>>tipe;
@@ -105,7 +108,7 @@ void Menu(Blockchain *coins) {
         Menu(coins);
 
     }
-    else if (rpta == '7') {
+    else if (rpta == "7") {
         string tipe;
         cout <<"Menor valor de monto o fecha: ";
         cin>>tipe;
@@ -113,14 +116,38 @@ void Menu(Blockchain *coins) {
         Menu(coins);
 
     }
-    else if (rpta == '8'){
+    else if (rpta == "8"){
         string nombre_cliente;
         cout << "Ingrese el nombre del usuario" << endl; 
         cin >> nombre_cliente; 
         coins->calcular_monto_acumulado(nombre_cliente);
         Menu(coins);
     }
-    else if (rpta == '9') {
+    else if (rpta == "9") {
+        /*
+        string nombre_cliente;
+        cout << "Ingrese el nombre del usuario" << endl;
+        cin >> nombre_cliente;
+        coins->search(nombre_cliente);
+        Menu(coins);
+        */
+
+        cout << endl
+             << "---------------------------" << endl;
+        cout << "    Busqueda Menu" << endl;
+        cout << "---------------------------" << endl;
+        cout << "1. Buscar cliente" << endl;
+        cout << "2. Buscar lugar" << endl;
+        cout << "3. Buscar monto" << endl;
+
+        string opc;
+        cout << "Ingrese su opcion" << endl;
+        cin >> opc;
+
+        coins->search(opc);
+        Menu(coins);
+    }
+    else if (rpta == "10") {
         cout << endl
              << "Gracias por usar la plataforma. " << endl;
         cout << endl

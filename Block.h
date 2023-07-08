@@ -38,6 +38,9 @@ class Block {
     string get_cliente(){
         return this->data->cliente;
     }
+    string get_lugar(){
+        return this->data->lugar;
+    }
 
     double get_monto(){
         return this->data->monto;
