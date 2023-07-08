@@ -28,14 +28,15 @@ void Menu(Blockchain *coins) {
         cout << "5. Importar Blockchain" << endl;
         cout << "6. Mayor Valor" << endl;
         cout << "7. Menor Valor" << endl;
-        cout << "8. Salir" << endl;
+        cout << "8. Calcular monto usuario" << endl;
+        cout << "9. Salir" << endl;
 
         cout << endl
              << "Ingrese una opcion: ";
         cin >> rpta;
         cout << endl;
 
-    } while (rpta != '1' && rpta != '2' && rpta != '3' && rpta != '4' && rpta != '5' && rpta != '6'&& rpta != '7'&& rpta != '8');
+    } while (rpta != '1' && rpta != '2' && rpta != '3' && rpta != '4' && rpta != '5' && rpta != '6'&& rpta != '7'&& rpta != '8'&& rpta !='9');
 
     if (rpta == '1') {  // Creamos y a;adimos el bloque a la blockchain
 
@@ -112,10 +113,18 @@ void Menu(Blockchain *coins) {
         Menu(coins);
 
     }
-    else if (rpta == '8') {
+    else if (rpta == '8'){
+        string nombre_cliente;
+        cout << "Ingrese el nombre del usuario" << endl; 
+        cin >> nombre_cliente; 
+        coins->calcular_monto_acumulado(nombre_cliente);
+        Menu(coins);
+    }
+    else if (rpta == '9') {
         cout << endl
              << "Gracias por usar la plataforma. " << endl;
         cout << endl
              << " " << endl;
     }
+
 }

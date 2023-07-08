@@ -40,6 +40,7 @@ class Blockchain {
     void fix_all();
     void max_value(string tipe);
     void min_value(string tipe);
+    void calcular_monto_acumulado(string nombre_cliente);
 
 };
 
@@ -127,6 +128,16 @@ void Blockchain::show_blockchain() {
         Block *currentBlock = *it;
         currentBlock->show_block_info(cout);
     }
+}
+void Blockchain::calcular_monto_acumulado(string nombre_cliente){
+    int total = 0; 
+    ListIterator<Block *> it;
+    for (it = this->chain->begin(); it != this->chain->end(); ++it) {
+        Block *currentBlock = *it;
+        if (currentBlock->get_cliente() == nombre_cliente)
+            total += currentBlock->get_monto();
+    }
+    cout << "monto total: " << total << " coins" << endl; 
 }
 
 
