@@ -1,4 +1,3 @@
-#include "retiro.h"
 #include <iomanip> // Necesario para get_time
 #include <iostream>
 #include <sstream> // Necesario para ostringstream
@@ -6,12 +5,12 @@
 #include <vector>
 using namespace std;
 
-template <typename T> class HeapMon : public retiro {
+template <typename T> class HeapMon : public T {
 public:
   enum Type { MAX_HEAP, MIN_HEAP };
 
 private:
-  retiro **elements;
+  T **elements;
   int capacity;
   int n;
   Type type;
@@ -20,33 +19,17 @@ public:
 
 
   HeapMon(int capacity, Type type = MAX_HEAP) : capacity(capacity), type(type) {
-    elements = new retiro *[capacity];
+    elements = new T *[capacity];
     n = 0;
   }
 
   ~HeapMon() { delete[] elements; }
-  /*
-  retiro& operator[](int index) {
-      // Add bounds checking if desired
-      return elements[index];
-  }
-  */
-  
-// int convertir_fecha(string fechaStr) {
-//     // Convertir la fecha a un número
-//     tm fechaInfo = {};
-//     istringstream ss(fechaStr);
-//     ss >> get_time(&fechaInfo, "%Y-%m-%d");
-//     time_t fechaNumericaIngresada = mktime(&fechaInfo) / (60 * 60 * 24);
 
-//     return fechaNumericaIngresada;
-//   }
-
-  void buildFromArray(retiro *elements, int n) {
+  void buildFromArray(T *elements, int n) {
     if (type == MAX_HEAP) {
       delete[] this->elements; // Liberar la memoria existente
 
-      this->elements = new retiro[n]; // Asignar nueva memoria
+      this->elements = new T[n]; // Asignar nueva memoria
       capacity = n;
       this->n = n;
 
@@ -61,7 +44,7 @@ public:
 
     else {
       delete[] this->elements;
-      this->elements = new retiro[n];
+      this->elements = new T[n];
       capacity = n;
       this->n = n;
 
@@ -79,13 +62,13 @@ public:
 
   bool is_empty() { return n == 0; }
 
-  // push para retiro
-  void push(retiro *value) { // listo
+  // push para T
+  void push(T *value) { // listo
     if (type == MAX_HEAP) {
       if (n == capacity) {
         // redimensionar
         capacity = 2 * capacity;
-        retiro **new_elements = new retiro *[capacity];
+        T **new_elements = new T *[capacity];
         for (int i = 0; i < n; i++)
           new_elements[i] = elements[i];
       }
@@ -101,11 +84,11 @@ public:
       heapify_up2(n - 1);
     }
   }
-  retiro pop() { // listo
+  T pop() { // listo
     if (type == MAX_HEAP) {
       if (n == 0)
         throw out_of_range("Heap vacio");
-      retiro *value = elements[0];
+      T *value = elements[0];
       elements[0] = elements[n - 1];
       n--;
       heapify_down(0);
@@ -114,7 +97,7 @@ public:
       if (n == 0) {
         throw out_of_range("Heap vacio");
       }
-      retiro *value = elements[0];
+      T *value = elements[0];
       elements[0] = elements[n - 1];
       n--;
       heapify_down2(0);
@@ -123,14 +106,14 @@ public:
   }
 
  
-  retiro* top(){
+  T* top(){
   if (n == 0)
     throw out_of_range("Heap vacio");
   return elements[0];
   }
   
-  vector<retiro> extractTheTopK(int k) {
-    vector<retiro> topKElements;
+  vector<T> extractTheTopK(int k) {
+    vector<T> topKElements;
 
     if (k <= 0 || k > n) {
       throw out_of_range("Valor inválido para 'k'");
@@ -141,7 +124,7 @@ public:
         break; // Si el montículo está vacío, salimos del bucle
       }
 
-      retiro topElement = pop(); // Extraer el elemento principal del montículo
+      T topElement = pop(); // Extraer el elemento principal del montículo
       topKElements.push_back(
           topElement); // Agregar el elemento extraído al vector
     }
@@ -149,8 +132,8 @@ public:
     return topKElements;
   }
 
-  static void sortAsc(retiro *arr, int n) {
-    HeapMon<retiro> *heap = new HeapMon<retiro>(10, HeapMon<retiro>::MIN_HEAP);
+  static void sortAsc(T *arr, int n) {
+    HeapMon<T> *heap = new HeapMon<T>(10, HeapMon<T>::MIN_HEAP);
     heap->buildFromArray(arr, n);
 
     for (int i = 0; i < n; i++) {
@@ -158,8 +141,8 @@ public:
     }
   }
 
-  static void sortDesc(retiro *arr, int n) { // aqui se utiliza el MAXHEAP
-    HeapMon<retiro> *heap = new HeapMon<retiro>(10, HeapMon<retiro>::MAX_HEAP);
+  static void sortDesc(T *arr, int n) { // aqui se utiliza el MAXHEAP
+    HeapMon<T> *heap = new HeapMon<T>(10, HeapMon<T>::MAX_HEAP);
     heap->buildFromArray(arr, n);
 
     for (int i = 0; i < n; i++) {
