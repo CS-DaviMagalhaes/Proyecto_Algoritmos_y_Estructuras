@@ -2,30 +2,30 @@
 #define BLOCK_H
 #include <iostream>
 #include <string>
-
+#include <QString>
 #include "SHA256.h"
-#include "retiro.h"
 using namespace std;
 
+template <typename T>
 class Block {
-   private:
-    unsigned int id = 1; 
+private:
+    unsigned int id = 1;
     unsigned long int nonce;
-    retiro *data;
+    T *data;
     SHA256 *hash;
     string prev;
     bool is_valid;
 
-   public:
+public:
     Block() {
         this->nonce = 1;
-        this->data = new retiro();
+        this->data = new T();
         this->prev = string(64, '0');
         this->hash = new SHA256(data->get_data() + this->prev);
         this->is_valid = true;
     }
 
-    Block(retiro *_data, unsigned long int _nonce = 1) {
+    Block(T *_data, unsigned long int _nonce = 1) {
         this->nonce = _nonce;
         this->data = _data;
         this->prev = string(64, '0');
@@ -126,30 +126,20 @@ class Block {
         return this->prev;
     }
 
-    void show_block_info(ostream &os) {
-        os << endl;
-        os << endl
-           << "Block id: " << this->id;
-        os << endl
-           << "Nonce: " << this->nonce;
-        os << endl
-           << "----------------------------------------";
-        os << endl
-           << "cliente: " << this->data->cliente;
-        os << endl
-           << "lugar: " << this->data->lugar;
-        os << endl
-           << "Monto: " << this->data->monto;
-        os << endl
-           << "Fecha: " << this->data->fecha;        
-           os << endl;
-        os << "----------------------------------------";
-        os << endl
-           << "Hash Value: " << this->hash->hash_result;
-        os << endl
-           << "Prev Hash: " << this->prev;
-        os << endl
-           << "Valid block: " << boolalpha << this->is_valid;
+    void show_block_info(QString& output) {
+        output += "\n\n";
+        output += "\nBlock id: " + QString::number(this->id);
+        output += "\nNonce: " + QString::number(this->nonce);
+        output += "\n----------------------------------------";
+        output += "\nCliente: " + QString::fromStdString(this->data->cliente);
+        output += "\nLugar: " + QString::fromStdString(this->data->lugar);
+        output += "\nMonto: " + QString::number(this->data->monto);
+        output += "\nFecha: " + QString::fromStdString(this->data->fecha);
+        output += "\n----------------------------------------";
+        output += "\nHash Value: " + QString::fromStdString(this->hash->hash_result);
+        output += "\nPrev Hash: " + QString::fromStdString(this->prev);
+        output += "\nValid block: " + QString(this->is_valid ? "true" : "false");
+
     }
 
     void modify(string name) {
@@ -162,3 +152,4 @@ class Block {
     }
 };
 #endif
+
